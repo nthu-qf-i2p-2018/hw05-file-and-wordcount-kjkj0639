@@ -2,12 +2,11 @@
 import nltk
 import re
 from collections import Counter
-import csv
 import csv,json, pickle, string
 
 def main(filename):
-    filename=open(filename)
-    lines = filename.readlines()
+    txtfile=open(filename)
+    lines = txtfile.readlines()
     all_words = []
 
     
@@ -16,7 +15,7 @@ def main(filename):
             
         for word in words:
             word=word.strip(string.punctuation)
-            if word is '':
+            if word !=(" ")
                 all_words.append(word)
 
     
@@ -24,7 +23,7 @@ def main(filename):
 
    
     with open('wordcount.csv','w') as csv_file:
-        writer = csv.writer(csv_file)
+        writer = csv.writer(csv_file,delimite=",")
         writer.writerow(['word', 'count'])
         writer.writerows(counter.most_common())
 
