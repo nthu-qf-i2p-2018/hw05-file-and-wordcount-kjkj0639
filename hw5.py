@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -
-import nltk
-import re
 from collections import Counter
 import csv,json, pickle, string
 
