@@ -3,17 +3,17 @@ from collections import Counter
 import csv,json, pickle, string
 
 def main(filename):
-    txtfile=open(filename)
-    lines = txtfile.readlines()
     all_words = []
 
     
-    for line in lines:
-        words=line.split()
+    for line in open(filename):
+        line = line.strip()
+        if not line:
+            continue
             
-        for word in words:
+        for word in line.split():
             word=word.strip(string.punctuation)
-            if word!=(" "):
+            if word:
                 all_words.append(word)
 
     
